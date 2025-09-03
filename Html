@@ -1,49 +1,154 @@
-    <nav class="navbar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">FloraDesign</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-      <div class="logo">Keerthana</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floral-bg">
+            <div class="flower flower-1">🌸</div>
+            <div class="flower flower-2">🌺</div>
+            <div class="flower flower-3">🌷</div>
+            <div class="flower flower-4">🌹</div>
+        </div>
+        <div class="hero-content">
+            <h1>Hello, I'm Sophia</h1>
+            <p>A Creative Web Developer & Designer</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
 
-      <ul class="nav-links" id="navLinks">
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a passionate web developer and designer with a love for creating beautiful, functional websites. My floral-inspired design aesthetic combines elegance with modern functionality.</p>
+                <p>With over 5 years of experience in the industry, I specialize in creating responsive websites that not only look stunning but also provide exceptional user experiences.</p>
+                <p>When I'm not coding, you can find me gardening, practicing floral arrangement, or exploring nature for inspiration.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Profile Image">
+            </div>
+        </div>
+    </section>
 
-        <li><a href="#home">Home</a></li>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, React, Node.js</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>User-centered design, prototyping, wireframing</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>Creating websites that work on all devices</p>
+            </div>
+        </div>
+    </section>
 
-        <li><a href="#about">About</a></li>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Project 1">
+                <div class="project-info">
+                    <h3>Floral E-commerce</h3>
+                    <p>An online flower shop with custom arrangements</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Project 2">
+                <div class="project-info">
+                    <h3>Garden Blog</h3>
+                    <p>A blog for gardening enthusiasts</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1596638787647-904d822d751e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Project 3">
+                <div class="project-info">
+                    <h3>Event Planning</h3>
+                    <p>Website for a floral event planning company</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <li><a href="#projects">Projects</a></li>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>Feel free to reach out for collaboration or just to say hello!</p>
+                <p><i class="fas fa-envelope"></i> hello@floradesign.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> Flower Street 123, Garden City</p>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-        <li><a href="#contact">Contact</a></li>
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2023 FloraDesign. All rights reserved.</p>
+    </footer>
 
-      </ul>
-
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    </nav>
-
-  </header>
-
-  <!-- Hero Section -->
-
-  <section id="home" class="hero">
-
-    <h1>Hi, I'm <span>Keerthana</span></h1>
-
-    <p>Aspiring Web Developer | Designer | Learner</p>
-
-    <a href="#projects" class="btn">View My Work</a>
-
-  </section>
-
-  <!-- About Section -->
-
-  <section id="about" class="about">
-
-    <h2>About Me</h2>
-
-    <p>
-
-      Hello! I'm Keerthana, passionate about web development and design.
-
-      I enjoy creating clean and responsive websites using HTML, CSS, and JavaScript.
-
-    </p>
-
-  </section>
+    <script src="script.js"></script>
+</body>
+</html>
