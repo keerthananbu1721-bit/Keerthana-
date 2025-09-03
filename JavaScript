@@ -1,25 +1,95 @@
-// Toggle menu on small screens
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (document.querySelector('.nav-links').classList.contains('open')) {
+                toggleMenu();
+            }
+        }
+    });
+});
 
-function toggleMenu() {
+// Form submission handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Simple validation
+    if (name && email && message) {
+        // In a real application, you would send this data to a server
+        alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+        this.reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
 
-  document.getElementById("navLinks").classList.toggle("show");
-
+// Animation on scroll
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.skill, .project');
+    
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        
+        // If element is in viewport
+        if (position.top < window.innerHeight - 100) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateY(0)';
+        }
+    });
 }
 
-// Smooth scrolling
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-  anchor.addEventListener("click", function(e) {
-
-    e.preventDefault();
-
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-
-      behavior: "smooth"
-
-    });
-
-  });
-
+// Set initial state for animated elements
+document.querySelectorAll('.skill, .project').forEach(element => {
+    element.style.opacity = 0;
+    element.style.transform = 'translateY(50px)';
+    element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
 });
+
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+function toggleMenu() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    
+    // Toggle body scroll when menu is open
+    if (navLinks.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+}
+
+hamburger.addEventListener('click', toggleMenu);
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const isClickInsideNav = navLinks.contains(e.target) || hamburger.contains(e.target);
+    
+    if (!isClickInsideNav && navLinks.classList.contains('open')) {
+        toggleMenu();
+    }
+});
+
+// Listen for scroll events
+window.addEventListener('scroll', animateOnScroll);
+// Initial check on page load
+window.addEventListener('load', animateOnScroll);
